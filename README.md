@@ -39,7 +39,7 @@ Users upload multi-page documents (textbooks, research papers, legal briefs, tec
 
 ---
 
-## 🎯 Product Vision & Problem
+## Product Vision & Problem
 
 ### The Problem
 Traditional search keyword matching fails on semantic nuance, while vanilla Large Language Models (LLMs) hallucinate facts and cannot cite specific pages. Furthermore, sending entire 2,000+ page documents directly into an LLM context window:
@@ -57,7 +57,7 @@ KnowFlow AI employs a modular, page-aware RAG pipeline:
 
 ---
 
-## 🏛️ Architecture & Workflow
+## Architecture & Workflow
 
 ```text
 Upload PDF Document
@@ -95,26 +95,26 @@ Grounded Answer + Page-Level Citations + Dual-Mode PDF Inspector
 
 ---
 
-## ✨ Core Features
+## Core Features
 
-- 📄 **Page-Aware Document Processing**: Preserves exact 1-indexed page numbers across every single chunk.
-- 🎯 **Strict Anti-Hallucination Guard**: Never invents facts. Politely declines when context is absent.
-- 🔍 **Flexible Knowledge Scoping**: Query a single document, a chosen subset of documents, or the entire knowledge base.
-- ⚡ **Real-Time Streaming SSE**: Token-by-token streaming responses with sub-second time-to-first-token.
-- 🔬 **Dual-Mode Source Inspector**:
+-  **Page-Aware Document Processing**: Preserves exact 1-indexed page numbers across every single chunk.
+-  **Strict Anti-Hallucination Guard**: Never invents facts. Politely declines when context is absent.
+-  **Flexible Knowledge Scoping**: Query a single document, a chosen subset of documents, or the entire knowledge base.
+-  **Real-Time Streaming SSE**: Token-by-token streaming responses with sub-second time-to-first-token.
+-  **Dual-Mode Source Inspector**:
   - Interactive citation cards showing page number, similarity confidence percentage, and snippet text.
   - Built-in PDF preview viewer that automatically scrolls to the cited page.
-- 🎓 **AI Study Station**:
+-  **AI Study Station**:
   - **Executive Summary**: High-level synthesis with structured takeaways.
   - **Practice Quiz**: 4 multiple-choice questions with instant answer reveal and page citations.
   - **Key Concepts**: Glossary of terms, formal definitions, and simple beginner analogies.
   - **Cornell Notes**: Markdown study notes with one-click copy to clipboard.
-- 🌗 **Light & Dark Mode**: Handcrafted themes with dark slate backgrounds and crisp typography.
-- 💾 **Persistent Storage**: Retains documents, chat sessions, and vector indices across server restarts.
+-  **Light & Dark Mode**: Handcrafted themes with dark slate backgrounds and crisp typography.
+-  **Persistent Storage**: Retains documents, chat sessions, and vector indices across server restarts.
 
 ---
 
-## 🛠️ Technology Stack
+##  Technology Stack
 
 | Layer | Technologies |
 |---|---|
@@ -128,7 +128,7 @@ Grounded Answer + Page-Level Citations + Dual-Mode PDF Inspector
 
 ---
 
-## 🧠 RAG Explained
+##  RAG Explained
 
 ```text
 Document (PDF)
@@ -161,7 +161,7 @@ Grounded Answer + Clickable Page Citations
 
 ---
 
-## 📂 Project Structure
+##  Project Structure
 
 ```text
 knowflow-ai/
@@ -222,7 +222,7 @@ knowflow-ai/
 
 ---
 
-## 🚀 Getting Started (Windows & Cross-Platform)
+##  Getting Started (Windows & Cross-Platform)
 
 ### Prerequisites
 - Python 3.11+
@@ -311,7 +311,7 @@ python tests/e2e_live_test.py
 
 ---
 
-## 📡 API Reference
+##  API Reference
 
 | Method | Endpoint | Description |
 |---|---|---|
@@ -335,7 +335,7 @@ python tests/e2e_live_test.py
 
 ---
 
-## 🛡️ Hallucination Defense & Grounding
+##  Hallucination Defense & Grounding
 
 KnowFlow AI eliminates hallucinations through a multi-tier defense:
 1. **Low Temperature**: Default sampling temperature is set to `0.2` for deterministic, fact-focused responses.
@@ -345,7 +345,7 @@ KnowFlow AI eliminates hallucinations through a multi-tier defense:
 
 ---
 
-## ⚡ Performance & Scalability
+##  Performance & Scalability
 
 - **Local Vector Inference**: Uses ChromaDB's built-in ONNX MiniLM-L6-v2 dense embeddings. Zero remote network overhead or rate limits during vectorization.
 - **Batch Processing**: Chunks are embedded and indexed in batches of 100 to prevent memory spikes.
@@ -354,7 +354,7 @@ KnowFlow AI eliminates hallucinations through a multi-tier defense:
 
 ---
 
-## 🔒 Security
+##  Security
 
 - **Path-Traversal Guard**: All uploaded filenames are stripped of directories (`../`, `\`), sanitized with regex, and saved with UUID prefixes.
 - **Secret Isolation**: Frontend never handles or bundles API keys; all LLM and vector store calls are brokered through FastAPI backend.
